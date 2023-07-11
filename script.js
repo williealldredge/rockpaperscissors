@@ -1,6 +1,6 @@
 //create function 'get computer choice' that randomly returns R P or S
-let playerScore = 0;
-let compScore = 0;
+
+
 
 function getComputerChoice() { 
     let choice = Math.random() * 100;
@@ -40,12 +40,17 @@ function getComputerChoice() {
         return 'You win, scissors beats paper'
     }
  }
-
+// new function called game. Plays 5 rounds and keeps score. 
+ let playerScore = 0;
+ let compScore = 0;
+ 
+ 
 function game() {
     for (let i = 0; i < 5; i++) {
         const computerSelection = getComputerChoice();
         const playerSelection = prompt('Rock, Paper, or Scissors?').toLowerCase();
-        (playRound(playerSelection, computerSelection))
+        playRound(playerSelection, computerSelection);
+        console.log(playerScore, compScore)
     }
     if (playerScore > compScore) {
         console.log('You Win!');
@@ -55,5 +60,6 @@ function game() {
         console.log('you tied')
     }
 }
+
 
 game();
